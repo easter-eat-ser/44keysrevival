@@ -1,13 +1,50 @@
-[gd_scene load_steps=2 format=3 uid="uid://bpykf0og4eved"]
+[gd_scene load_steps=6 format=3 uid="uid://bpykf0og4eved"]
 
+[ext_resource type="Script" path="res://cammove.gd" id="1_mp8io"]
+[ext_resource type="Texture2D" uid="uid://dkgxmbyuem4kc" path="res://asset/snuube.svg" id="1_msr6o"]
 [ext_resource type="Texture2D" uid="uid://q0mji1emu8su" path="res://asset/levelbase.svg" id="1_qyjeh"]
+[ext_resource type="Script" path="res://charmovement.gd" id="1_rcpf0"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_o4xog"]
+size = Vector2(45, 45)
 
 [node name="Node2D" type="Node2D"]
 
 [node name="Camera2D" type="Camera2D" parent="."]
-position = Vector2(-405, -539)
 scale = Vector2(0.1, 0.1)
+script = ExtResource("1_mp8io")
 
-[node name="Sprite2D" type="Sprite2D" parent="."]
+[node name="char" type="CharacterBody2D" parent="."]
+position = Vector2(-233, -428)
+scale = Vector2(0.1, 0.1)
+script = ExtResource("1_rcpf0")
+speed = 50
+gravity = 5000
+airres = 0.9
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="char"]
+scale = Vector2(10, 10)
+shape = SubResource("RectangleShape2D_o4xog")
+
+[node name="Sprite2D" type="Sprite2D" parent="char"]
+scale = Vector2(10, 10)
+texture = ExtResource("1_msr6o")
+
+[node name="world" type="StaticBody2D" parent="."]
+position = Vector2(406, 541)
 scale = Vector2(0.265, 0.265)
+
+[node name="Sprite2D" type="Sprite2D" parent="world"]
 texture = ExtResource("1_qyjeh")
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="world"]
+polygon = PackedVector2Array(-2887.5, -2726, 1022.3, -2726, 1025.5, -2722.8, 1025.5, 173, 1022.5, 173, -3061.5, 175, -3061.5, -4082, -2887.5, -4082)
+
+[node name="CollisionPolygon2D2" type="CollisionPolygon2D" parent="world"]
+polygon = PackedVector2Array(3061.5, -3738, -2213.5, -3738, -2213.5, -3739, -2214.5, -3739, -2214.5, -3740, -2215.5, -3740, -2215.5, -4082, 3061.5, -4082)
+
+[node name="CollisionPolygon2D3" type="CollisionPolygon2D" parent="world"]
+polygon = PackedVector2Array(3061.5, 4082, 2887.5, 4082, 2887.5, 2046, 2210.5, 2046, 848.5, 2045, 848.5, 2042, 846.5, 1359, 849.5, 1359, 2206.5, 1357, 2206.5, -2723.2, 2208.5, -2724.2, 2208.5, -2726, 3061.5, -2726)
+
+[node name="CollisionPolygon2D4" type="CollisionPolygon2D" parent="world"]
+polygon = PackedVector2Array(172.5, 2040, 174.5, 3228, 1362.5, 3228, 1364.5, 3568, 2213.5, 3568, 2213.5, 3571, 2215.5, 4082, -3061.5, 4082, -3061.5, 2037, 172.5, 2037)
