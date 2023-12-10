@@ -1,0 +1,13 @@
+[gd_scene load_steps=2 format=3 uid="uid://bpykf0og4eved"]
+
+[ext_resource type="Texture2D" uid="uid://q0mji1emu8su" path="res://asset/levelbase.svg" id="1_qyjeh"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="Camera2D" type="Camera2D" parent="."]
+position = Vector2(-405, -539)
+scale = Vector2(0.1, 0.1)
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+scale = Vector2(0.265, 0.265)
+texture = ExtResource("1_qyjeh")
