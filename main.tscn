@@ -19,7 +19,6 @@ position = Vector2(-233, -428)
 scale = Vector2(0.1, 0.1)
 script = ExtResource("1_rcpf0")
 speed = 50
-gravity = 5000
 airres = 0.9
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="char"]

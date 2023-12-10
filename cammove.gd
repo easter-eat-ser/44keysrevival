@@ -8,8 +8,8 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(_delta):
-	print($"/root/Node2D/char")
+	
 	var playerpos = $"/root/Node2D/char".position
 	var pgrid = Vector2(round(playerpos.x / 810) * 810, round(playerpos.y / 1080) * 1080) + Vector2(0, 0)
-	set_position(pgrid)
+	set_position(position.lerp(pgrid, 0.1))
 	pass
