@@ -11,5 +11,5 @@ func _process(_delta):
 	
 	var playerpos = $"/root/Node2D/char".position
 	var pgrid = Vector2(round(playerpos.x / 810) * 810, round(playerpos.y / 1080) * 1080) + Vector2(0, 0)
-	set_position(position.lerp(pgrid, 0.1))
+	set_position(position.lerp(pgrid, 0.2))
 	pass
